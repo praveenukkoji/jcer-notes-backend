@@ -73,6 +73,8 @@ class UpdateBranchController(GenericAPIView):
             if payload:
                 response['payload'] = payload
                 response['message'] = message
+            else:
+                response['message'] = "Branch id required."
         except Exception as e:
             print(e)
             response['error'] = str(e)

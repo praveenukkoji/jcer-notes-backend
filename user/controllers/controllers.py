@@ -172,6 +172,8 @@ class DeleteFacultyController(GenericAPIView):
             if payload:
                 response['payload'] = payload
                 response['message'] = message
+            else:
+                response['message'] = "Faculty id required."
         except Exception as e:
             print(e)
             response['error'] = str(e)

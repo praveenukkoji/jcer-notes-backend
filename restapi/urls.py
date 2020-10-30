@@ -27,5 +27,5 @@ urlpatterns = [
     path('user/', include(userurls)),
     path('branch/', include(branchurls)),
     path('subject/', include(subjecturls)),
-    # path('document/', include(documenturls))
+    path('document/', include(documenturls))
 ]

@@ -1,16 +1,11 @@
 import uuid
-from datetime import datetime
-from pathlib import Path
 
 from django.core.files.storage import FileSystemStorage
 from rest_framework.generics import GenericAPIView
 from django.http import JsonResponse
 import json
-import os
 
 from document.implementation.implementation import DocumentImplementation
-
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 class CreateDocumentController(GenericAPIView):

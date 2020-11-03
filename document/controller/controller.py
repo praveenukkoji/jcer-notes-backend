@@ -85,12 +85,10 @@ class UploadDocumentController(GenericAPIView):
         response = {"status": 200, "payload": "", "message": "", "error": ""}
         try:
             file = request.data.get('document', None)
+            filename = request.data.get('document_name', None)
             if file:
                 fs = FileSystemStorage()
-                extension = file.name.split(".")[-1]
-                filename = str(uuid.uuid4())+"."+extension
                 fs.save(filename, file)
-                response["payload"] = {"document_url": "/media/"+filename}
                 response["message"] = "Document uploaded successfully."
             else:
                 response["message"] = "Document is missing."

@@ -1,1 +1,1 @@
-# jcer-rest-api
+# jcer-notes-rest-api

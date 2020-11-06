@@ -1,0 +1,753 @@
+{
+	"info": {
+		"_postman_id": "d343ec4f-d908-45b3-a816-1e049775bbc7",
+		"name": "Jcer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "create student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\":[\n        {\n\t\t\t\"name\": \"Pratik Hangirgekar\",\n            \"usn\": \"2jr18Cs049\",\n            \"email\": \"pratikeH@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"c00dabc6-1637-41da-b827-ae333b4c7011\",\n            \"sem\": 5,\n            \"year\": 3\n\t\t},\n        {\n\t\t\t\"name\": \"Sheryas Deshpande\",\n            \"usn\": \"2jr18Cs072\",\n            \"email\": \"shreyasD@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"68f34ded-3d69-4431-972d-b5bee06b9dd6\",\n            \"sem\": 5,\n            \"year\": 3\n\t\t},\n        {\n\t\t\t\"name\": \"Rohit Motri\",\n            \"usn\": \"2jr18Cs055\",\n            \"email\": \"rohitM@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"9d1a6fb4-1b3f-45e1-bbf0-c923f902be49\",\n            \"sem\": 5,\n            \"year\": 3\n\t\t},\n        {\n\t\t\t\"name\": \"Praveen Ukkoji\",\n            \"usn\": \"2jr18Cs051\",\n            \"email\": \"praveenukkoji@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"0d16bb48-aa39-4f46-adfb-61df1d40b32f\",\n            \"sem\": 5,\n            \"year\": 3\n\t\t}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/create/students/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"create",
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/get/students/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"get",
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\": [\"01dc0a82-f681-4c4f-b3f7-a4b317a2ed3\", \"ds\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/delete/students/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"delete",
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\": [\n        {\n\t\t\t\"student_id\": \"3083af89-b3b1-4f87-b09e-925e8676b096\",\n            \"update_data\":{\n\t\t\t\t\"email\":\"pratikH@gmail.com\"\n\t\t\t}\n\t\t}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/update/students/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"update",
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\":[\n        {\n            \"usn\": \"2jr18cs049\",\n            \"password\": \"adminadmin\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/login/student/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								"student",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "faculty",
+			"item": [
+				{
+					"name": "create faculty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"faculties\":[\n        {\n\t\t\t\"name\": \"Prateik Hangirgekar\",\n            \"email\": \"pratikeeH@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"68f34ded-3d69-4431-972d-b5bee06b9dd6\"\n\t\t},\n        {\n\t\t\t\"name\": \"Sheryas Deshpande\",\n            \"email\": \"shreyasD@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"c00dabc6-1637-41da-b827-ae333b4c7011\"\n\t\t},\n        {\n\t\t\t\"name\": \"Rohit Motri\",\n            \"email\": \"rohitM@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"9d1a6fb4-1b3f-45e1-bbf0-c923f902be49\"\n\t\t},\n        {\n\t\t\t\"name\": \"Praveen Ukkoji\",\n            \"email\": \"praveenukkoji@gmail.com\",\n            \"password\": \"adminadmin\",\n            \"branch_id\": \"0d16bb48-aa39-4f46-adfb-61df1d40b32f\"\n\t\t}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/create/faculties/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"create",
+								"faculties",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get faculty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"faculties\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/get/faculties/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"get",
+								"faculties",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete faculty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"faculties\": [\"605bc755-19b0-48ce-bd05-93d8384704cc\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/delete/faculties/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"delete",
+								"faculties",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update faculty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"faculties\": [\n        {\n\t\t\t\"faculty_id\": \"605bc755-19b0-48ce-bd05-93d8384704cc\",\n            \"update_data\":{\n\t\t\t\t\"email\":\"123@gmail.com\"\n\t\t\t}\n\t\t}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/update/faculties/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"update",
+								"faculties",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login faculty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"faculty\":[\n        {\n            \"email\": \"123@gmail.com\",\n            \"password\": \"1234567890\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/login/faculties/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								"faculties",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a443735e-5845-4680-aa85-0fd833355e88",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd1f4643-7398-4623-8752-5c9249485e07",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "branch",
+			"item": [
+				{
+					"name": "get branches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"branches\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/branch/get/branches/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"branch",
+								"get",
+								"branches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create branches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"branches\": [\n        {\n            \"branch_name\": \"IIT\"\n        },\n        {\n            \"branch_name\": \"MECH\"\n        },\n        {\n            \"branch_name\": \"CIV\"\n        },\n        {\n            \"branch_name\": \"E&C\"\n        },\n        {\n            \"branch_name\": \"CSE\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/branch/create/branches/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"branch",
+								"create",
+								"branches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update branches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"branches\": [\n        {\n            \"branch_id\": \"1ca85fc1-3d23-411f-9010-2b4ab59dab82\",\n            \"update_data\": {\n                \"branch_name\": \"IiT\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/branch/update/branches/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"branch",
+								"update",
+								"branches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete branches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"branches\": [\"1ca85fc1-3d23-411f-9010-2b4ab59dab82\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/branch/delete/branches/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"branch",
+								"delete",
+								"branches",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "subject",
+			"item": [
+				{
+					"name": "create subjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subjects\": [\n        {\n            \"subject_name\": \"Python\",\n            \"subject_code\": \"18CS55\",\n            \"branch_id\": \"0d16bb48-aa39-4f46-adfb-61df1d40b32f\",\n            \"sem\": 5,\n            \"year\": 5\n        },\n        {\n            \"subject_name\": \"Thermodynamics\",\n            \"subject_code\": \"18ME55\",\n            \"branch_id\": \"c00dabc6-1637-41da-b827-ae333b4c7011\",\n            \"sem\": 5,\n            \"year\": 5\n        },\n        {\n            \"subject_name\": \"Centroid\",\n            \"subject_code\": \"18CV55\",\n            \"branch_id\": \"68f34ded-3d69-4431-972d-b5bee06b9dd6\",\n            \"sem\": 5,\n            \"year\": 5\n        },\n        {\n            \"subject_name\": \"Aurdino\",\n            \"subject_code\": \"18EN55\",\n            \"branch_id\": \"9d1a6fb4-1b3f-45e1-bbf0-c923f902be49\",\n            \"sem\": 5,\n            \"year\": 5\n        },\n        {\n            \"subject_name\": \"Centroid\",\n            \"subject_code\": \"18CVqq55\",\n            \"branch_id\": \"68f34ded-3d6-4431-972d-b5bee06b9dd6\",\n            \"sem\": 5,\n            \"year\": 5\n        },\n        {\n            \"subject_name\": \"Aurdino\",\n            \"subject_code\": \"18EN5w5\",\n            \"branch_id\": \"9d1a6fb4-1b3f-45e1-bbf0-c923f902be49\",\n            \"sem\": 5,\n            \"year\": 5\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/subject/create/subjects/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subject",
+								"create",
+								"subjects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get subjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subjects\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/subject/get/subjects/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subject",
+								"get",
+								"subjects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update subjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subjects\": [\n        {\n            \"subject_id\": \"e8836bf1-edf8-4cda-97f9-cacd047838fa\",\n            \"update_data\": {\n                \"subject_name\": \"updated\",\n                \"sem\": 4,\n                \"subject_code\": \"18Cs45\",\n                \"year\": 3,\n                \"branch_id\": \"9d1a6fb4-1b3f-45e1-bbf0-c923f902be49\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/subject/update/subjects/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subject",
+								"update",
+								"subjects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete subjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subjects\": [\"e8836bf1-edf8-4cda-97f9-cacd047838fa\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/subject/delete/subjects/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subject",
+								"delete",
+								"subjects",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "document",
+			"item": [
+				{
+					"name": "create document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": [\n        {\n            \"document_title\": \"Python\",\n            \"document_url\": \"url\",\n            \"subject_id\": \"9ef3637c-fdd2-49d8-918d-21e077e417e6\",\n            \"module\": 3\n        },\n        {\n            \"document_title\": \"Thermodynamics\",\n            \"document_url\": \"url1\",\n            \"subject_id\": \"b272607e-8d12-452d-ab8b-3eb6ab2fff9f\",\n            \"module\": 3\n        },\n        {\n            \"document_title\": \"Centroid\",\n            \"document_url\": \"url2\",\n            \"subject_id\": \"9a70acf3-6930-4504-ba13-fb0bf3a6d67b\",\n            \"module\": 3\n        },\n        {\n            \"document_title\": \"Arudino\",\n            \"document_url\": \"url3\",\n            \"subject_id\": \"1a577131-f5c6-4781-8bdc-1d0d974dcca1\",\n            \"module\": 3\n        },\n        {\n            \"document_title\": \"English\",\n            \"document_url\": \"url4\",\n            \"subject_id\": \"1a577131-f5c6-4781-8bdc-1d0d974dcca1\",\n            \"module\": 3\n        },\n        {\n            \"document_title\": \"Maths\",\n            \"document_url\": \"url5\",\n            \"subject_id\": \"1a577131-f5c6-4781-8bdc-1d0d974dcca1\",\n            \"module\": 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/document/create/document/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"document",
+								"create",
+								"document",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": [\"2959098d-43f0-4801-a6b8-dfda7e339f43\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/document/get/document/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"document",
+								"get",
+								"document",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": [\n        {\n            \"document_id\": \"96739d0d-da02-448b-b7ee-a06f2b9c1ccf\",\n            \"update_data\": {\n                \"document_url\": \"url10\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/document/update/document/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"document",
+								"update",
+								"document",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": [\"96739d0d-da02-448b-b7ee-a06f2b9c1cc\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/document/delete/document/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"document",
+								"delete",
+								"document",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document",
+									"type": "file",
+									"src": "/Users/praveenukkoji/Developer/College Project/notes models.docx"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/document/upload/document/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"document",
+								"upload",
+								"document",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

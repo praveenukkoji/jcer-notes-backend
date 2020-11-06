@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-# document
+# document model
 class Documents(Base):
     __tablename__ = 'document'
 

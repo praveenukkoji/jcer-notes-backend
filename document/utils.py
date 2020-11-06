@@ -4,6 +4,7 @@ from subject.models import Subjects
 from restapi.connection import DBConnection
 
 
+# get document payload
 def get_document_payload(data, count):
     try:
         payload = []
@@ -46,6 +47,7 @@ def get_document_payload(data, count):
     return payload, str(count) + " document fetched.", count
 
 
+# columns to update
 document_columns = {
     "document_title": Documents.document_title,
     "document_url": Documents.document_url,

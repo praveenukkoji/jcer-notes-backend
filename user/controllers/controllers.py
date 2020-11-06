@@ -4,7 +4,7 @@ import json
 from user.implementation.implementation import UserImplementation
 
 
-# create student
+# create students
 class CreateStudentController(GenericAPIView):
     def post(self, requests):
         response = {"status": 200, "payload": "", "message": "", "error": ""}

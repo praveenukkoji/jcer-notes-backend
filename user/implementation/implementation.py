@@ -2,9 +2,9 @@ from user.models import Students, Faculties
 from restapi.connection import DBConnection
 from sqlalchemy.exc import SQLAlchemyError
 from datetime import datetime
-import uuid
 from passlib.hash import pbkdf2_sha256
 from user.utils import get_student_payload, student_columns, get_faculty_payload, faculty_columns
+import uuid
 
 
 class UserImplementation:
@@ -49,7 +49,7 @@ class UserImplementation:
             print(e)
             raise e
         finally:
-            return payload, str(count) + " students created."
+            return payload, str(count) + " student created."
 
     # get students
     def get_students(self):
@@ -106,8 +106,8 @@ class UserImplementation:
 
                     except SQLAlchemyError as e:
                         print(e)
-                        payload.append(
-                            {"student_id": student['student_id'], "message": str(e._message).split(":  ")[1].split("\\")[0]})
+                        payload.append({"student_id": student['student_id'],
+                                        "message": str(e._message).split(":  ")[1].split("\\")[0]})
                         session.rollback()
         except Exception as e:
             print(e)
@@ -187,14 +187,13 @@ class UserImplementation:
                         count += 1
                     except SQLAlchemyError as e:
                         print(e)
-                        payload.append(
-                            {"faculty_id": _id, "message": str(e._message).split(":  ")[1].split('\\')[0]})
+                        payload.append({"faculty_id": _id, "message": str(e._message).split(":  ")[1].split('\\')[0]})
                         session.rollback()
         except Exception as e:
             print(e)
             raise e
         finally:
-            return payload, str(count) + " faculties created."
+            return payload, str(count) + " faculty created."
 
     # get faculties
     def get_faculties(self):
@@ -234,10 +233,10 @@ class UserImplementation:
                     for key, value in faculty["update_data"].items():
                         if key == "password":
                             value = pbkdf2_sha256.encrypt(value, rounds=1200, salt_size=32)
-                            columns_to_update[student_columns[key]] = value
-                        columns_to_update[student_columns[key]] = value
-                    columns_to_update[Students.modified_by] = faculty['faculty_id']
-                    columns_to_update[Students.modified_on] = datetime.now()
+                            columns_to_update[faculty_columns[key]] = value
+                        columns_to_update[faculty_columns[key]] = value
+                    columns_to_update[Faculties.modified_by] = faculty['faculty_id']
+                    columns_to_update[Faculties.modified_on] = datetime.now()
 
                     try:
                         query = session.query(Faculties).filter(Faculties.faculty_id == faculty['faculty_id']) \
@@ -245,16 +244,15 @@ class UserImplementation:
                         session.commit()
                         if query:
                             count += 1
-                            payload.append(
-                                {"faculty_id": faculty['faculty_id'], "message": "Faculty updated successfully."})
+                            payload.append({"faculty_id": faculty['faculty_id'],
+                                            "message": "Faculty updated successfully."})
                         else:
-                            payload.append(
-                                {"faculty_id": faculty['faculty_id'], "message": "Faculty doesn't exist."})
+                            payload.append({"faculty_id": faculty['faculty_id'], "message": "Faculty doesn't exist."})
 
                     except SQLAlchemyError as e:
                         print(e)
-                        payload.append(
-                            {"faculty_id": faculty['faculty_id'], "message": str(e._message).split(":  ")[1].split("\\")[0]})
+                        payload.append({"faculty_id": faculty['faculty_id'],
+                                        "message": str(e._message).split(":  ")[1].split("\\")[0]})
                         session.rollback()
         except Exception as e:
             print(e)

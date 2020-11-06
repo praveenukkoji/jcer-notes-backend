@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-# student
+# student model
 class Students(Base):
     __tablename__ = 'student'
 
@@ -37,7 +37,7 @@ class Students(Base):
         self.modified_on = modified_on
 
 
-# faculty
+# faculty model
 class Faculties(Base):
     __tablename__ = 'faculty'
 

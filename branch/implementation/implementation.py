@@ -1,10 +1,8 @@
 from branch.models import Branches
 from restapi.connection import DBConnection
 from sqlalchemy.exc import SQLAlchemyError
-from datetime import datetime
-import uuid
-
 from branch.utils import get_branches_payload
+import uuid
 
 
 class BranchImplementation:
@@ -37,7 +35,7 @@ class BranchImplementation:
             print(e)
             raise e
         finally:
-            return payload, str(count) + " branches created."
+            return payload, str(count) + " branch created."
 
     # get branches
     def get_branches(self):

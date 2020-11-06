@@ -1,3 +1,4 @@
+
 # get branches payload
 def get_branches_payload(data, count):
     try:
@@ -12,4 +13,4 @@ def get_branches_payload(data, count):
     except Exception as e:
         print(e)
         raise e
-    return payload, str(count) + " branches fetched.", count
+    return payload, str(count) + " branch fetched", count

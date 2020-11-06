@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
+# branches model
 class Branches(Base):
     __tablename__ = 'branch'
 

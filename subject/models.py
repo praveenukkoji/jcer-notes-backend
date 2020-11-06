@@ -1,9 +1,10 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
+# subject model
 class Subjects(Base):
     __tablename__ = "subject"
 

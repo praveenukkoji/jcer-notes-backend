@@ -1,9 +1,8 @@
 from subject.models import Subjects
 from restapi.connection import DBConnection
 from sqlalchemy.exc import SQLAlchemyError
-from datetime import datetime
-import uuid
 from subject.utils import get_subject_payload, subject_columns
+import uuid
 
 
 class SubjectImplementation:
@@ -40,7 +39,7 @@ class SubjectImplementation:
             print(e)
             raise e
         finally:
-            return payload, str(count) + " subjects created."
+            return payload, str(count) + " subject created."
 
     # get subjects
     def get_subjects(self):
@@ -60,7 +59,7 @@ class SubjectImplementation:
                             payload.append({"subject_id": subject, "message": "Subject doesn't exists."})
                     message = str(count) + " subjects fetched."
                 else:
-                    query = session.query(Subjects)
+                    query = session.query(Subjects).order_by(Subjects.subject_code)
                     data = query.all()
                     payload, message, count = get_subject_payload(data, count)
         except Exception as e:
@@ -79,7 +78,7 @@ class SubjectImplementation:
                     columns_to_update = {}
                     for key, value in subject["update_data"].items():
                         if key == 'subject_code':
-                            val = value.lower()
+                            val = value.upper()
                             columns_to_update[subject_columns[key]] = val
                         else:
                             columns_to_update[subject_columns[key]] = value
@@ -122,3 +121,47 @@ class SubjectImplementation:
             print(e)
             raise e
         return payload, str(count) + " subject deleted."
+
+    # get by branch_id subjects
+    def get_branch_id_subjects(self):
+        payload = []
+        count = 0
+        try:
+            subjects_to_find = self.requests.get("subjects", None)
+            with DBConnection() as session:
+                for branch in subjects_to_find:
+                    query = session.query(Subjects).filter(Subjects.branch_id == branch)
+                    data = query.all()
+                    if data:
+                        payload1, message, count = get_subject_payload(data, count)
+                        payload = payload1
+                    else:
+                        payload.append({"branch_id": branch, "message": "Subject doesn't exists."})
+                message = str(count) + " subject fetched."
+        except Exception as e:
+            print(e)
+            raise e
+        return payload, message
+
+    # get by branch and sem subjects
+    def get_sem_subjects(self):
+        payload = []
+        count = 0
+        try:
+            subjects_to_find = self.requests.get("subjects", None)
+            with DBConnection() as session:
+                for subject in subjects_to_find:
+                    query = session.query(Subjects).filter(Subjects.branch_id == subject["branch_id"])\
+                        .filter(Subjects.sem == subject["sem"])
+                    data = query.all()
+                    if data:
+                        payload1, message, count = get_subject_payload(data, count)
+                        payload = payload1
+                    else:
+                        payload.append({"branch_id": subject["branch_id"], "sem": subject["sem"],
+                                        "message": "Subject doesn't exists."})
+                message = str(count) + " subject fetched."
+        except Exception as e:
+            print(e)
+            raise e
+        return payload, message

@@ -3,6 +3,7 @@ from restapi.connection import DBConnection
 from branch.models import Branches
 
 
+# get subject payload
 def get_subject_payload(data, count):
     try:
         payload = []
@@ -30,9 +31,10 @@ def get_subject_payload(data, count):
     except Exception as e:
         print(e)
         raise e
-    return payload, str(count) + " subjects fetched.", count
+    return payload, str(count) + " subject fetched.", count
 
 
+# columns to update
 subject_columns = {
     "subject_name": Subjects.subject_name,
     "subject_code": Subjects.subject_code,

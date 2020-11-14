@@ -1,0 +1,44 @@
+FACULTY
+
+create table public.faculty(
+	faculty_id varchar(100),
+    	name varchar(50),
+    	branch_id varchar(100),
+    	email varchar(100),
+    	password varchar(1000),
+    	created_by varchar(100),
+    	created_on TIMESTAMP,
+    	modified_by varchar(100),
+    	modified_on TIMESTAMP
+);
+
+
+BRANCH
+
+create table public.branch(
+	branch_id varchar(100),
+    	branch_name varchar(50)
+);
+
+
+DOCUMENT
+
+create table public.document(
+	document_id varchar(100),
+    	document_title varchar(50),
+	document_url varchar(1000),
+    	subject_id varchar(100),
+	module integer
+);
+
+
+SUBJECT
+
+create table public.subject(
+	subject_id varchar(100),
+    	subject_name varchar(100),
+    	subject_code varchar(10),
+    	branch_id varchar(100),
+    	sem integer,
+   	year integer
+);

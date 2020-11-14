@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 
 # Database connection
 db_settings = {
-    'dbname': 'jcer',
+    'dbname': 'Jcer',
     'dbhost': '127.0.0.1:5432',
     'dbuser': 'postgres',
     'dbpass': 'postgres',

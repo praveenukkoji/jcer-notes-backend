@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 # imports
 from pathlib import Path
 import os
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,8 +54,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'corsheaders.middleware.CorsMiddleware',
 ]
 
@@ -80,14 +77,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'restapi.wsgi.application'
 
+
 # Database
 
 db_settings = {
-    'dbname': 'Jcer',
-    'dbhost': '127.0.0.1:5432',
-    'dbuser': 'postgres',
-    'dbpass': 'postgres',
-    'dbschema': 'public',
+    # 'dbname': 'Jcer',
+    # 'dbhost': '127.0.0.1:5432',
+    # 'dbuser': 'postgres',
+    # 'dbpass': 'postgres',
+    # 'dbschema': 'public',
 }
 
 # Password validation
@@ -119,23 +117,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # Static files (CSS, JavaScript, Images)
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
-os.makedirs(STATIC_TMP, exist_ok=True)
-os.makedirs(STATIC_ROOT, exist_ok=True)
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 # media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
-
-django_heroku.settings(locals())

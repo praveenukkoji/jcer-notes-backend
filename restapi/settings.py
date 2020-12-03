@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 # imports
 from pathlib import Path
 import os
+import django_on_heroku
+django_on_heroku.settings(locals())
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +34,6 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # If this is used then 'CORS_ORIGIN_WHITELIST' will not have any effect
-
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = False
 

@@ -5,6 +5,7 @@ from sqlalchemy.pool import NullPool
 from contextlib import contextmanager
 
 
+# connect
 def connect(dbuser, dbpass, dbhost, dbname, dbschema):
     connection = create_engine('postgresql+psycopg2://{0}:{1}@{2}/{3}'.format(dbuser, dbpass, dbhost, dbname),
                                connect_args={'options': '-csearch_path={}'.format(dbschema)}, client_encoding='utf8',

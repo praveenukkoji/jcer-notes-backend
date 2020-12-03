@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'u5jmxnosq%ycv!n68hbg_zhaydh7ed64105e$4y!g#xgueq&!1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # hosts
 ALLOWED_HOSTS = ['*']
@@ -80,12 +80,20 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 
 # Database
 
+# db_settings = {
+#     'dbname': 'Jcer',
+#     'dbhost': '127.0.0.1:5432',
+#     'dbuser': 'postgres',
+#     'dbpass': 'postgres',
+#     'dbschema': 'public',
+# }
+
 db_settings = {
-    # 'dbname': 'Jcer',
-    # 'dbhost': '127.0.0.1:5432',
-    # 'dbuser': 'postgres',
-    # 'dbpass': 'postgres',
-    # 'dbschema': 'public',
+    'dbname': 'dd4jf652ih05mi',
+    'dbhost': 'ec2-52-71-153-228.compute-1.amazonaws.com',
+    'dbuser': 'airnemdsuxeeny',
+    'dbpass': '398932b05bc631960cc63b5dcf4430bc9b94bdb567b6d3332be8bca1cd32c718',
+    'dbschema': 'public',
 }
 
 # Password validation
@@ -117,10 +125,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
 
-# media
+# Media
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'

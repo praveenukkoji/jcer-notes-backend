@@ -23,10 +23,31 @@ SECRET_KEY = 'u5jmxnosq%ycv!n68hbg_zhaydh7ed64105e$4y!g#xgueq&!1'
 DEBUG = False
 
 # hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://jcer-notes-api.herokuapp.com']
 
-# cors headers
-CORS_ORIGIN_ALLOW_ALL = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# If this is used then 'CORS_ORIGIN_WHITELIST' will not have any effect
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = False
+
+# If this is used then not need to use 'CORS_ORIGIN_ALLOW_ALL = True'
+
+UI_URL = 'https://jcer-notes.herokuapp.com'
+CORS_ORIGIN_WHITELIST = [UI_URL]
+CORS_ORIGIN_REGEX_WHITELIST = [UI_URL]
+
+CORS_ALLOWED_ORIGINS = [UI_URL]
+CORS_ALLOW_METHODS = ['GET', 'OPTIONS', 'POST']
+CORS_ALLOW_HEADERS = ['accept', 'accept-encoding', 'authorization', 'content-type', 'dnt', 'origin', 'user-agent',
+                      'x-crsftoken', 'x-requested-with']
+
+# 20 minutes
+CORS_PREFLIGHT_MAX_AGE = 1200
 
 INSTALLED_APPS = [
     'django.contrib.admin',

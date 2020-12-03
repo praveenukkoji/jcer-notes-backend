@@ -1,4 +1,1 @@
-release: python3 manage.py makemigrations --no-input
-release: python3 manage.py migrate --no-input
-
-web: unicorn restapi.wsgi
+web: gunicorn restapi.wsgi

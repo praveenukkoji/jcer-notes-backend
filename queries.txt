@@ -3,7 +3,6 @@ FACULTY
 create table public.faculty(
 	faculty_id varchar(100),
     	name varchar(50),
-    	branch_id varchar(100),
     	email varchar(100),
     	password varchar(1000),
     	created_by varchar(100),

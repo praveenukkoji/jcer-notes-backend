@@ -38,7 +38,7 @@ CORS_ALLOW_CREDENTIALS = False
 
 # If this is used then not need to use 'CORS_ORIGIN_ALLOW_ALL = True'
 
-UI_URL = 'https://jcer-notes.herokuapp.com'
+UI_URL = 'http://jcer-notes.herokuapp.com'
 CORS_ORIGIN_WHITELIST = [UI_URL]
 CORS_ORIGIN_REGEX_WHITELIST = [UI_URL]
 

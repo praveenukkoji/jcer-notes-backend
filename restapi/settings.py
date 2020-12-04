@@ -25,7 +25,7 @@ SECRET_KEY = 'u5jmxnosq%ycv!n68hbg_zhaydh7ed64105e$4y!g#xgueq&!1'
 DEBUG = False
 
 # hosts
-ALLOWED_HOSTS = ['https://jcer-notes.herokuapp.com']
+ALLOWED_HOSTS = ['http://jcer-notes.herokuapp.com']
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True

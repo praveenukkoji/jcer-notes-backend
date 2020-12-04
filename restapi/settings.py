@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'u5jmxnosq%ycv!n68hbg_zhaydh7ed64105e$4y!g#xgueq&!1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # hosts
 ALLOWED_HOSTS = ['http://jcer-notes.herokuapp.com']

@@ -25,7 +25,7 @@ SECRET_KEY = 'u5jmxnosq%ycv!n68hbg_zhaydh7ed64105e$4y!g#xgueq&!1'
 DEBUG = True
 
 # hosts
-ALLOWED_HOSTS = ['https://jcer-notes.herokuapp.com']
+ALLOWED_HOSTS = ['https://jcer-notes.herokuapp.com','http://jcer-notes.herokuapp.com']
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -38,7 +38,7 @@ CORS_ALLOW_CREDENTIALS = False
 
 # If this is used then not need to use 'CORS_ORIGIN_ALLOW_ALL = True'
 
-UI_URL = 'https://jcer-notes.herokuapp.com'
+UI_URL = 'http://jcer-notes.herokuapp.com'
 CORS_ORIGIN_WHITELIST = [UI_URL]
 CORS_ORIGIN_REGEX_WHITELIST = [UI_URL]
 

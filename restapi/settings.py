@@ -39,10 +39,12 @@ CORS_ALLOW_CREDENTIALS = False
 # If this is used then not need to use 'CORS_ORIGIN_ALLOW_ALL = True'
 
 UI_URL = 'http://jcer-notes.herokuapp.com'
-CORS_ORIGIN_WHITELIST = [UI_URL]
-CORS_ORIGIN_REGEX_WHITELIST = [UI_URL]
+UI_URL1 = 'https://jcer-notes.herokuapp.com'
+UI_URL2 = 'http://localhost:4200'
+CORS_ORIGIN_WHITELIST = [UI_URL, UI_URL1, UI_URL2]
+CORS_ORIGIN_REGEX_WHITELIST = [UI_UR, UI_URL1, UI_URL2L]
 
-CORS_ALLOWED_ORIGINS = [UI_URL]
+CORS_ALLOWED_ORIGINS = [UI_URL, UI_URL1, UI_URL2]
 CORS_ALLOW_METHODS = ['GET', 'OPTIONS', 'POST']
 CORS_ALLOW_HEADERS = ['accept', 'accept-encoding', 'authorization', 'content-type', 'dnt', 'origin', 'user-agent',
                       'x-crsftoken', 'x-requested-with']

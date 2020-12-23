@@ -25,7 +25,7 @@ SECRET_KEY = 'u5jmxnosq%ycv!n68hbg_zhaydh7ed64105e$4y!g#xgueq&!1'
 DEBUG = True
 
 # hosts
-ALLOWED_HOSTS = ['https://jcer-notes.herokuapp.com','http://jcer-notes.herokuapp.com','http://localhost:4200']
+ALLOWED_HOSTS = ['https://jcer-notes.herokuapp.com','http://jcer-notes.herokuapp.com','https://jcer-notes-website.herokuapp.com', 'http://jcer-notes-website.herokuapp.com']
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -40,11 +40,12 @@ CORS_ALLOW_CREDENTIALS = False
 
 UI_URL = 'http://jcer-notes.herokuapp.com'
 UI_URL1 = 'https://jcer-notes.herokuapp.com'
-UI_URL2 = 'http://localhost:4200'
-CORS_ORIGIN_WHITELIST = [UI_URL, UI_URL1, UI_URL2]
-CORS_ORIGIN_REGEX_WHITELIST = [UI_URL, UI_URL1, UI_URL2]
+UI_URL2 = 'http://jcer-notes-website.herokuapp.com'
+UI_URL3 = 'https://jcer-notes-website.herokuapp.com'
+CORS_ORIGIN_WHITELIST = [UI_URL, UI_URL1, UI_URL2, UI_URL3]
+CORS_ORIGIN_REGEX_WHITELIST = [UI_URL, UI_URL1, UI_URL2, UI_URL3]
 
-CORS_ALLOWED_ORIGINS = [UI_URL, UI_URL1, UI_URL2]
+CORS_ALLOWED_ORIGINS = [UI_URL, UI_URL1, UI_URL2, UI_URL3]
 CORS_ALLOW_METHODS = ['GET', 'OPTIONS', 'POST']
 CORS_ALLOW_HEADERS = ['accept', 'accept-encoding', 'authorization', 'content-type', 'dnt', 'origin', 'user-agent',
                       'x-crsftoken', 'x-requested-with']

@@ -112,10 +112,10 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 # }
 
 db_settings = {
-    'dbname': 'dd4jf652ih05mi',
-    'dbhost': 'ec2-52-71-153-228.compute-1.amazonaws.com',
-    'dbuser': 'airnemdsuxeeny',
-    'dbpass': '398932b05bc631960cc63b5dcf4430bc9b94bdb567b6d3332be8bca1cd32c718',
+    'dbname': 'd8s36vv1dnu3l5',
+    'dbhost': 'ec2-54-242-152-123.compute-1.amazonaws.com',
+    'dbuser': 'kauhabqakfrvfs',
+    'dbpass': 'efaf589cb8dd92a6e921bddedd55e551dd05446f227f57bc09b9f79e2e447a85',
     'dbschema': 'public',
 }
 
